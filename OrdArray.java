@@ -44,7 +44,7 @@ class OrdArray {
                 if (a[curIn] < searchKey) {
                     lowelBound = curIn + 1;   //верхняя половина для поиска
                 } else {
-                    lowelBound = curIn - 1;   //нижняя половина для поиска
+                    upperBound = curIn - 1;   //нижняя половина для поиска
                 }
             }
         }
@@ -60,8 +60,9 @@ class OrdArray {
         }
         for (int k = nElems; k > j; k--) {    //перемещение последующих
             a[k] = a[k - 1];                  // элементов
-            a[j] = value;                  //вставка элемента
+            // a[j] = value;                  //вставка элемента
         }
+        a[j] = value;                  //вставка элемента
         nElems++;                         //увеличение элементов моссива
     }
 
@@ -69,10 +70,10 @@ class OrdArray {
     public boolean delete(long value) {
         int j = find(value);    //j = найденому уже через метод find значению
         if (j == nElems) {      //цикл дошел до последнего элемента?
-            System.out.print("Not found " + value);
+            System.out.print("\nNot found delete " + value + "\n");
             return false;       //не найдено знач.
         } else {                 //найдено значение
-            System.out.print("Delete " + value);
+            System.out.print("\nDelete " + value);
             for (int k = j; k < nElems; k++) {  //для каждого элемента
                 a[k] = a[k + 1];       //смещение последующих элементов
             }
@@ -80,12 +81,14 @@ class OrdArray {
             return true;
         }
 
+
     }
 
     // вывод элементов массива
     public void display() {
         for (int j = 0; j < nElems; j++) {     //перебор всех элементов
             System.out.print(a[j] + " ");   //вывод текущего элемента
+
         }
     }
 }
