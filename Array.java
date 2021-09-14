@@ -67,7 +67,6 @@ public class Array {
         for (j = 0; j < nElem; j++) {  //для всех элементов
             System.out.print(arr[j] + " ");  //показать массив
             // System.out.println(" ");
-
         }
 
     }
