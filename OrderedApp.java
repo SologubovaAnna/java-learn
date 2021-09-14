@@ -11,7 +11,6 @@ class OrderedApp {
         int maxSize = 100;   //размер моссива
         OrdArray arr;        // ссылка на моссив OrdArray
         arr = new OrdArray(maxSize);   //создание массива
-
         //вставка 10 элементов
         arr.insert(11);
         arr.insert(22);
@@ -27,9 +26,9 @@ class OrderedApp {
         //поиск элемента
         int searchKey = 55;    //значение искомого элемента
         if (arr.find(searchKey) != arr.size()) {
-            System.out.print("Found " + searchKey);
+            System.out.print("\nFound find " + searchKey + " \n");
         } else {
-            System.out.print("Not found " + searchKey);
+            System.out.print("\nNot found find " + searchKey + " \n");
         }
 
         //вывод элементов
