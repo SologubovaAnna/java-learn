@@ -29,9 +29,9 @@ class HighArrayApp {
         //поиск элементов
         int searchKey = 1;
         if (arr.find(searchKey)) {
-            System.out.println("Found " + searchKey);
+            System.out.println("Found " + searchKey + " ");
         } else {
-            System.out.println("Not found " + searchKey);
+            System.out.println("Not found " + searchKey + " ");
         }
 
         //удаление элементов из массива
