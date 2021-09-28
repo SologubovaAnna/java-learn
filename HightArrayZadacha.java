@@ -3,7 +3,9 @@
  *  Coursera User ID:  1234562
  * Конструктор Класс массива с высокоуровневым интерфейсом
  * getMax(), который возвращает наибольшее значение ключа в массиве или –1, если
-массив пуст
+ * массив пуст
+ * removeMax() - удаляет максимальный эл-т и возвращает его для главного класса
+ * в главном классе он используется как сортировка методом вставки. от max до min
  *  Last modified:     September 14, 2021
  **************************************************************************** */
 class HightArrayZadacha {
@@ -62,22 +64,50 @@ class HightArrayZadacha {
 
     public void display() {
         for (int j = 0; j < maxSize; j++) {
-            System.out.print(arr[j] + " ");
+            System.out.print("" + arr[j] + " ");
         }
+        System.out.println(" ");
     }
 
-    public void getMax() {    //максимальный эл
+    public long getMax() {    //максимальный эл
         long max = 0;
-
         for (int j = 0; j < maxSize; j++) {
             if (arr[j] > max) {
                 max = arr[j];
             }
-        }
-        if (maxSize == 0) {    //если моссив пуст то выводим -1
-            max = -1;
+
+            if (maxSize == 0) {    //если моссив пуст то выводим -1
+                max = -1;
+            }
         }
         System.out.println("\nMax: " + max);
+        return max;
+
+
     }
+
+
+    public long removeMax() {
+        long s = getMax();
+        System.out.print("s= " + s + " ");
+        System.out.println(" ");
+
+        int j;
+        for (j = 0; j < maxSize; j++) {
+            if (s == arr[j]) {
+                System.out.println("1/Delete: " + arr[j]);
+                for (int k = j; k < maxSize; k++) {   //сдвигаем если удаляем
+                    arr[k] = arr[k + 1];
+
+                }
+                maxSize--;
+
+            }
+        }
+        return arr[j];
+
+    }
+
+
 }
 
