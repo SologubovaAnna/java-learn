@@ -16,17 +16,22 @@ class HightArrayZadacha {
     }
 
     public boolean find(long value) {
-        for (int j = 0; j < maxSize; j++) {
-            if (a[j] == value) {    //найдено
+        int j;
+        for (j = 0; j < maxSize; j++) {
+            if (arr[j] == value) {    //найдено
+                System.out.println("Find" + arr[j]);
                 break;
             }
         }
+
         if (j == maxSize) {       //достигнут последний эл?
+            System.out.println("Not faund. ");
             return false;
         } else {
             return true;
         }
     }
+
 
     public void insert(long value) {
         arr[maxSize] = value;
@@ -34,16 +39,18 @@ class HightArrayZadacha {
     }
 
     public boolean delete(long value) {
-        for (int j = 0; j < maxSize; j++) {
+        int j;
+        for (j = 0; j < maxSize; j++) {
             if (arr[j] == value) {
                 break;
             }
         }
+
         if (j == maxSize) {
-            System.out.print("Not found for delete. ");
+            System.out.println("Not found for delete. ");
             return false;
         } else {
-            System.out.print("Delete: " + value);
+            System.out.println("Delete: " + value);
             for (int k = j; k < maxSize; k++) {   //сдвигаем если удаляем
                 arr[k] = arr[k + 1];
             }
@@ -52,19 +59,25 @@ class HightArrayZadacha {
         }
     }
 
+
     public void display() {
         for (int j = 0; j < maxSize; j++) {
-            System.out.print("a[j] " + a[j]);
+            System.out.print(arr[j] + " ");
         }
     }
 
-    public void getMax() {
+    public void getMax() {    //максимальный эл
+        long max = 0;
+
         for (int j = 0; j < maxSize; j++) {
-            if (arr[j] == 0) {
-                System.out.print("-1 " + " ");
+            if (arr[j] > max) {
+                max = arr[j];
             }
         }
+        if (maxSize == 0) {    //если моссив пуст то выводим -1
+            max = -1;
+        }
+        System.out.println("\nMax: " + max);
     }
-
-
 }
+
