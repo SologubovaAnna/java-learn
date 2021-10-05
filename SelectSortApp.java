@@ -9,6 +9,8 @@ class SelectSortApp {
         int maxSize = 100;
         ArraySel arr;
         arr = new ArraySel(maxSize);
+
+
         arr.insert(22);
         arr.insert(55);
         arr.insert(44);
@@ -24,5 +26,20 @@ class SelectSortApp {
         arr.selectionSort();
         System.out.println("After sort: ");
         arr.display();
+
+         /*
+         //вставка случайных чисел в массив
+        for (int j = 0; j < maxSize; j++) // Заполнение массива
+        { // случайными числами
+            long n = (long) (java.lang.Math.random() * (maxSize - 1));
+            arr.insert(n);
+        }
+        System.out.println("Before sort: ");
+        arr.display();
+        arr.selectionSort();
+        System.out.println("After sort: ");
+        arr.display();
+
+          */
     }
 }
