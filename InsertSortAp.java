@@ -6,10 +6,10 @@
  **************************************************************************** */
 class InsertSortAp {
     public static void main(String[] args) {
-        int maxSize = 100;          //кол-во элементов всего
+        int maxSize = 100000;          //кол-во элементов всего
         ArrayIns arr;              //ссылка на массив
         arr = new ArrayIns(maxSize);        //создание массива
-
+/*
         //вставка в массив
         arr.insert(77);
         arr.insert(88);
@@ -21,6 +21,19 @@ class InsertSortAp {
         arr.insert(11);
         arr.insert(00);
         arr.insert(99);
+        arr.display();
+        arr.insertionSort();
+        arr.display();
+
+ */
+
+        //вставка случайных чисел в массив
+        for (int j = 0; j < maxSize; j++) // Заполнение массива
+        { // случайными числами
+            long n = (long) (java.lang.Math.random() * (maxSize - 1));
+            arr.insert(n);
+            
+        }
         arr.display();
         arr.insertionSort();
         arr.display();
