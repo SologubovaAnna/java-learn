@@ -17,21 +17,31 @@ class DoublyLinkedApp {
         theList.inswertLast(100);
         theList.inswertLast(200);
         theList.inswertLast(7);
-        theList.displayForward();
-        theList.displayBackward();
 
-        theList.deleteFirst();
+        theList.displayForward();   //показать в прямом порядке
+
+        theList.displayBackward();   //показать в обратном порядке
+
+        theList.deleteFirst();     //удаление из прямого порядка
+
         theList.displayForward();
+
         theList.deleteLast();
-        theList.deleteFirst();
+
+        theList.displayForward();
 
         theList.insertAfter(999, 200);
-        theList.insertAfter(9, 11);
+
         theList.displayForward();
 
-        theList.deleteKey(88);
+        theList.insertAfter(9, 11);
+
         theList.displayForward();
-        
+
+        theList.deleteKey(99);
+
+        theList.displayForward();
+
 
     }
 }
