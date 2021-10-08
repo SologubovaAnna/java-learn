@@ -1,7 +1,7 @@
 /* *****************************************************************************
  *  Name:              Anna Sologubova
  *  Coursera User ID:  1234562
- * Конструктор для двусвязного списка
+ * Конструктор элементов для двусвязного списка
  * Основной конструктор Link2Svaz
  *  Last modified:     October 07, 2021
  ****************************************************************************/
@@ -19,7 +19,7 @@ class DoublyLinkedList {
 
     //если пустой список то true
     public boolean isEmpty() {
-        return false;
+        return (first == null);
     }
 
     // вставка эл вперед
@@ -59,7 +59,7 @@ class DoublyLinkedList {
             last = null;    //последний эл == null
         } else { //если ни 1 эл а много
             //1 предыдущий эл в поле next = null
-            first.previos.next = null;
+            first.next.previos = null;
         }
         //первый эл = 1 эл поле next
         first = first.next;
@@ -102,7 +102,7 @@ class DoublyLinkedList {
             last = newLink;       //старый последний эл = новому объекту
         } else {
             newLink.next = current.next;   //новый объект в ссылке next = старое значение next
-            current.previos.next = newLink; //1-й эл в ссылке previos на next = новый эл
+            current.next.previos = newLink; //1-й эл в ссылке previos на next = новый эл
         }
         newLink.previos = current;   //новый объект в ссылке previos = старый 1-й эл.
         current.next = newLink;    //старое значение в 1 эл  = новый эл
@@ -114,7 +114,7 @@ class DoublyLinkedList {
         //от начала списка
         Link2Svaz current = first;
         //поиск по ключу в списке
-        while (current != null) {
+        while (current.dData != key) {
             current = current.next;
             if (current == null) {
                 return null;  //не найден key цикл прошел все эл
